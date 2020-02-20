@@ -9,13 +9,14 @@ public class Task5 {
     }
 
     private static class Board {
-        private List balls;
-
+        private List balls;  //We can also rewrite this line as --->>>  private List balls = new ArrayList<>();
+        //Logic in class will be WRONG but NullPointerException will NOT be thrown
         public Board() {
             List balls = new ArrayList<>();
             balls.add(new Ball());
             balls.add(new Ball());
             balls.add(new Ball());
+            this.balls = balls; //  <<<----- THIS LINE WAS ADDED
         }
 
         public int count() {
